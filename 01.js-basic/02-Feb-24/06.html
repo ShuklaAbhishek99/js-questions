@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If a year is leap or not</title>
+</head>
+<body>
+    <h3></h3>
+
+    <script>
+        let year = prompt("Enter the Year");
+        year = Number(year);
+        
+        let ans = (year%4 == 0) ? "is a Leap Year" : "is not a Leap Year"
+        
+        const str = `${year} ${ans}`
+        
+        document.getElementsByTagName('h3')[0].innerText = str;
+    </script>
+</body>
+</html>

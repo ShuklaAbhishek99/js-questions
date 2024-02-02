@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divide and Multiply</title>
+</head>
+<body>
+    <form id="calculationForm">
+        <label for="number1">1st Number:</label>
+        <input type="text" id="number1">
+        <br>
+        <label for="number2">2nd Number:</label>
+        <input type="text" id="number2">
+        <br>
+        <button type="submit" id="multiply">Multiply</button>
+        <button type="submit" id="divide">Divide</button>
+    </form>
+
+    <div id="result">
+        
+    </div>
+
+    <script>
+        document.getElementById('calculationForm').addEventListener('submit', function(event) {
+            // Prevent default form submission
+            event.preventDefault(); 
+
+            const number1 = parseFloat(document.getElementById('number1').value);
+            const number2 = parseFloat(document.getElementById('number2').value);
+            
+            const multiplyButton = document.getElementById('multiply');
+            const divideButton = document.getElementById('divide');
+
+            // Check which button is clicked
+            if (multiplyButton === event.submitter) {
+                document.getElementById('result').innerHTML = `The result of multiplication is: ${number1 * number2}`;
+            } 
+            else if (divideButton === event.submitter) {
+                if (number2 !== 0) {
+                    document.getElementById('result').innerHTML = `The result of division is: ${number1 / number2}`;
+                } 
+                else {
+                    document.getElementById('result').innerHTML = "Cannot divide by zero!";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
